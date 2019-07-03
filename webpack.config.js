@@ -14,7 +14,6 @@ module.exports = {
     // webpackの扱わないファイル(HTMLや画像など)が入っているディレクトリ
     contentBase: path.resolve(__dirname, 'public'),
     port: 8080,
-    headers: {"Access-Control-Allow-Origin": "http://api.jugemkey.jp/api/horoscope/2013/04/10"},
     proxy: {
       '/api': {
         target: 'http://api.jugemkey.jp', // local api server

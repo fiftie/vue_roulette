@@ -6,19 +6,8 @@ function reqListener () {
 
 var oReq = new XMLHttpRequest();
 oReq.addEventListener("load", reqListener);
-oReq.open("GET", "/api/horoscope/free/2013/04/10");
+oReq.open("GET", "http://api.jugemkey.jp/api/horoscope/free/2013/04/10");
 oReq.send();
-
-const invocation = new XMLHttpRequest();
-const url = 'http://bar.other/resources/public-data/';
-   
-function callOtherDomain() {
-  if(invocation) {    
-    invocation.open('GET', url, true);
-    invocation.onreadystatechange = handler;
-    invocation.send(); 
-  }
-}
 
 Vue.component("member-list", {
   props: {
