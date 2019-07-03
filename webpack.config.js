@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     // 出力先のディレクトリ
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './docs'),
     // 出力ファイル名
     filename: 'index.bundle.js'
   },
