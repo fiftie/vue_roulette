@@ -12,13 +12,15 @@ module.exports = {
   },
   devServer: {
     // webpackの扱わないファイル(HTMLや画像など)が入っているディレクトリ
-    contentBase: path.resolve(__dirname, 'public'),
+    contentBase: path.resolve(__dirname, 'docs'),
     port: 8080,
     proxy: {
       '/api': {
         target: 'http://api.jugemkey.jp', // local api server
       }
-    }
+    },
+    lazy: true,
+    compress: true,
   },
   module: {
     rules: [
@@ -45,6 +47,6 @@ module.exports = {
     },
   },
   plugins: [
-    new CopyPlugin([{ from: './public' }])
+    new CopyPlugin([{ from: './docs' }])
   ],
 }

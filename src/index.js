@@ -6,7 +6,7 @@ function reqListener () {
 
 var oReq = new XMLHttpRequest();
 oReq.addEventListener("load", reqListener);
-oReq.open("GET", "http://api.jugemkey.jp/api/horoscope/free/2013/04/10");
+oReq.open("GET", "/api/horoscope/free/2013/04/10");
 oReq.send();
 
 Vue.component("member-list", {
