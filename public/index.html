@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>roulette</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div id="roulette">
+      <div>
+        <p>{{ assigned }}</p>
+        <button v-on:click="start">{{ buttonLabel }}</button>
+      </div>
+      <div>
+        <p>member</p>
+        <ul>
+          <li v-for="(member, index) in members">
+            <member-list
+              v-bind:member="member"
+              v-on:remove="members.splice(index, 1)"
+            ></member-list>
+          </li>
+        </ul>
+        <div>
+          名前
+          <input type="text" v-model="name" />
+          <br>
+          誕生日
+          <select v-model="month">
+            <option v-for="n in 12">{{ n }}</option>
+          </select>月
+          <select v-model="day">
+              <option v-for="n in 31">{{ n }}</option>
+          </select>日
+          <br>
+          <button type="button" v-on:click="addMember">add</button>
+        </div>
+      </div>
+    </div>
+    <script src="index.bundle.js"></script>
+  </body>
+</html>
